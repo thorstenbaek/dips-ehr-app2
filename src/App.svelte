@@ -1,13 +1,14 @@
 <script>
 	import {Router, Route} from "svelte-routing";
+	import Toolbar from "./components/Toolbar.svelte";
 	import Home from "./pages/Home.svelte";
 	import About from "./pages/About.svelte";
 
 	export let url = "";
 </script>
 
-Main
 <Router url={url}>
+	<Toolbar/>
 	<Route path="/">
 		<Home/>
 	</Route>
@@ -15,5 +16,7 @@ Main
 		<About/>
 	</Route>
 </Router>
+
+
 
 

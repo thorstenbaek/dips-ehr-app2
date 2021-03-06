@@ -1,25 +1,25 @@
-import { writable, readable, derived } from "svelte/store";
-
-export const configuration = writable(null);
+import { readable, writable } from "svelte/store";
 
 const configurationUrl = "https://raw.githubusercontent.com/thorstenbaek/dips-ehr-configuration/master/configuration.json";
 
-fetch(configurationUrl).then(
-    response => {        
-        response.json().then(
-            data => {                        
-                const environmentName = findEnvironmentName();
-                let config = data.configurations.filter(c => c.environment == environmentName);
-                if (config.length == 0)
-                {
-                    console.log(`Found no settings for environment: ${environmentName}. Using default`);    
-                    config = data.configurations.filter(c => c.environment == "default");
-                }
-                
-                configuration.set(config[0].settings);
-            })
-        });
-
+export const settings = readable(
+    null, set => {
+        fetch(configurationUrl).then(
+            response => {        
+                response.json().then(
+                    data => {                        
+                        const environmentName = findEnvironmentName();
+                        let config = data.configurations.filter(c => c.environment == environmentName);
+                        if (config.length == 0)
+                        {
+                            console.log(`No settings was found for environment: ${environmentName}. Using default settings`);    
+                            config = data.configurations.filter(c => c.environment == "default");
+                        }
+                        
+                        set(config[0].settings);
+                    })
+                });
+    });
 
 function findEnvironmentName()
 {
@@ -33,3 +33,5 @@ function findEnvironmentName()
 
     return environmentName;
 }
+
+export const patient = writable(null);
