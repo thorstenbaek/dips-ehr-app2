@@ -62,6 +62,24 @@ button:focus {
 	border-color: #666;
 }
 
+tr:nth-child(even) {
+    background: hsl(0, 0%, 91%);    
+}
+
+tr:nth-child(odd) {
+    background: hsl(0, 0%, 95%)
+}
+
+tr:hover {
+    background: #15576b;
+    color: white;
+}
+
+table {
+    width: 100%;    
+    border-collapse: collapse;
+}
+
 .toolbar__navigation-items a {
     color:white;
     text-decoration: none;

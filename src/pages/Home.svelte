@@ -10,13 +10,19 @@
         results = e.detail;            
     }
 
-    const selectPatient = e => {
-        patient.set(e.detail);
+    const close = () => {
+        console.log("close_home");
+        patient.set(null);
+    }
+
+    const selectPatient = e => {        
+        results = null;
+        patient.set(e.detail);        
     }
 </script>
 <div class="home">
     {#if $patient}
-        <Workspace/>
+        <Workspace on:close={close}/>
     {:else}
         <Search on:onSearch={onSearch}/>
         {#if results}
@@ -26,9 +32,9 @@
 </div>
 <style>
     .home {
-        background: #e6e6e6;
-        padding: 5px 10px;        
+        background: linear-gradient(0deg, hsl(0, 0%, 10%) 0%,hsl(0, 0%, 20%) 20%, hsl(0, 0%, 30%) 100%);        
+        padding: 0;        
         position: relative;
-        min-height: calc(100% - 72px)
+        min-height: calc(100% - 62px)
     }
 </style>

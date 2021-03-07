@@ -38,18 +38,6 @@
 </div>
 
 <style>
-    tr:nth-child(even) {
-    background: hsl(0, 0%, 91%);    
-}
-
-tr:nth-child(odd) {
-    background: hsl(0, 0%, 95%)
-}
-
-table {
-    width: 100%;    
-    border-collapse: collapse;
-}
 
 .result-list {
     background: hsl(0, 0%, 91%);    
@@ -60,11 +48,6 @@ table {
 .result-list-status {    
     padding: 4px;
     margin: 0px;    
-}
-
-.result-item:hover {
-    background: #15576b;
-    color: white;
 }
 
 .result-item-ssn {
