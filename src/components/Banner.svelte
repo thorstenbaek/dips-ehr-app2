@@ -12,7 +12,7 @@
 </script>
 
 <div class="patient">
-    <div class="icon {$patient.gender}"/>
+    <img alt="gender-symbol" src="./images/{$patient.gender}.svg"/>
     <div class="patient-name">{$patient.fullName}</div>
     <ul class="patient-data">
         <li class="patient-data-ssn">{$patient.ssn}</li>
@@ -65,16 +65,9 @@
     .patient-close-button:focus {
         outline: none;
     }
+    
 
-    .female {
-        background: url("./images/female.svg");
-    }
-
-    .male {
-        background: url("./images/male.svg");
-    }
-
-    .patient .icon {         
+    .patient img {         
         margin: 12px 0;
         grid-column: 1;
         grid-row: 1 / span 2;    

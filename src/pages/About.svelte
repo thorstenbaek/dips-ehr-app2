@@ -2,7 +2,7 @@
     import {settings} from "../stores/AppStore";
 </script>
 
-<div class="about">
+<div class="about select">
     <h2>DIPS EHR web application</h2>
     <p>
         Version: v1.0.0.2
