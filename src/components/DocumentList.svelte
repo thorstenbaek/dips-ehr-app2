@@ -8,10 +8,20 @@
         if ($settings)
         {
             const url = `${$settings.FhirServiceUri}/documentreference?patient=${$patient.id}`;
-            var response = await fetch(url);        
-            var bundle = await response.json();    
-            
-            documents = bundle?.entry.map(d => d.resource)        
+         
+            const headers = new Headers();
+            headers.append("Ocp-Apim-Subscription-Key", "0c0b700479fe4cc691497740eaaaef6f");
+            headers.append("Ticket-Header", "02591eea-57de-4d5a-9d66-c7f968c81afa");
+            headers.append("Cache-Control", "no-cache");
+
+            try {
+                var response = await fetch(url, {headers});
+                var bundle = await response.json();            
+                documents = bundle?.entry.map(d => d.resource)                    
+            }
+            catch (e) {
+                dispatch("error", e);
+            }
         }
     })
 

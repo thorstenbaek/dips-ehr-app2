@@ -12,9 +12,19 @@
             url = url + "?family=" + query;
         }
 
-        var response = await fetch(url);
-        var data = await response.json();
-        dispatch("onSearch", data);
+        const headers = new Headers();
+        headers.append("Ocp-Apim-Subscription-Key", "0c0b700479fe4cc691497740eaaaef6f");
+        headers.append("Ticket-Header", "02591eea-57de-4d5a-9d66-c7f968c81afa");
+        headers.append("Cache-Control", "no-cache");
+
+        try {
+            var response = await fetch(url, {headers});
+            var data = await response.json();            
+            dispatch("onSearch", data);
+        }
+        catch (e) {
+            dispatch("error", e);
+        }
     }
 
     async function submit(e) {

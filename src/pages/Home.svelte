@@ -10,6 +10,10 @@
         results = e.detail;            
     }
 
+    const onError = e => {
+        console.log("Search error", e);
+    }
+
     const close = () => {
         console.log("close_home");
         patient.set(null);
@@ -24,7 +28,7 @@
     {#if $patient}
         <Workspace on:close={close}/>
     {:else}
-        <Search on:onSearch={onSearch}/>
+        <Search on:onSearch={onSearch} on:error={onError}/>
         {#if results}
             <Results results={results} on:selectPatient={selectPatient}/>
         {/if}
