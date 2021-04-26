@@ -11,7 +11,7 @@
          
             const headers = new Headers();
             headers.append("Ocp-Apim-Subscription-Key", "0c0b700479fe4cc691497740eaaaef6f");
-            headers.append("Ticket-Header", "02591eea-57de-4d5a-9d66-c7f968c81afa");
+            headers.append("Ticket-Header", "b06dee93-c8ed-4b5e-9dae-aa2401882a82");
             headers.append("Cache-Control", "no-cache");
 
             try {
