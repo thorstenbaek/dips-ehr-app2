@@ -1,5 +1,5 @@
 <script>
-    import {settings} from "../stores/AppStore";
+    import {configUrl, settings} from "../stores/AppStore";
 </script>
 
 <div class="about select">
@@ -7,9 +7,11 @@
     <p>
         Version: v1.0.0.2
     </p>            
-    <h2>
-        Services
-    </h2>
+    <h2>Configuration</h2>    
+    <p>
+        {$configUrl}
+    </p>
+    <h2>Services</h2>
     <p>
         FHIR Service: {$settings?.FhirServiceUri} <br/>
         Security Service: {$settings?.SecurityServiceUri}
