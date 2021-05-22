@@ -27,7 +27,7 @@
         display: grid;    
         grid-template-columns: 40px auto 40px;
         grid-template-rows: 2.2rem 1.5rem;    
-        background-color: #e6e6e6;    
+        background-color: var(--lighter-gray);    
         margin: 0;
         padding: 0 0 0 5px;
         height: 60px;
@@ -35,7 +35,7 @@
 
     .patient div,
     .patient ul {
-        background-color: #e6e6e6;    
+        background-color: var(--lighter-gray);    
         text-align: left;
         padding: 0;
         margin: 0;
@@ -47,7 +47,7 @@
     }
 
     .patient-close-button {
-        color:#15576b;    
+        color:var(--dark-blue);    
         font-weight: bold;
         font-size: 2rem;
         cursor: pointer;
@@ -59,7 +59,7 @@
         grid-row: 1 / span 2;
     }
     .patient-close-button:hover {
-        color: #1fa7b2;
+        color: var(--blue);
     }
 
     .patient-close-button:focus {
@@ -76,7 +76,7 @@
 
     .patient-name {
         font-size: 1.6rem;   
-        color:#15576b;    
+        color:var(--dark-blue);    
         grid-row: 1;
         grid-column: 2;
         margin: 2px 0 5px 0;

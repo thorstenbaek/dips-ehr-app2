@@ -33,7 +33,7 @@
         top: 60px;
         bottom: 0;        
         width: 72px;
-        background: #15576b;
+        background: var(--dark-blue);
     }
 
     .tiles ul {

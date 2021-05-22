@@ -40,7 +40,7 @@
 <style>
 
 .result-list {
-    background: hsl(0, 0%, 91%);    
+    background: var(--lighter-gray);
     width: 100%;
     max-width: 800px;
 }

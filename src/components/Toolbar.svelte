@@ -18,20 +18,31 @@
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About</Link></li>
             </ul>
-        </div>
+        </div>        
     </nav>
+    <div class="dips-line"/>
 </header>
 
 <style>
 .toolbar {
     width: 100%;
     height: 62px;
-    background: #15576b;
+    background: var(--lighter-gray);
+}
+
+.dips-line {
+    position: relative;
+    background: var(--orange);    
+    left: 0;
+    bottom: 0;
+    width: 180px;
+    height: 4px;
 }
 
 .toolbar__navigation {
     display: flex;
-    height: 100%;
+    background: var(--dark-blue);
+    height: calc(100% - 4px);
     align-items: center; 
     padding: 0 1rem;
 } 

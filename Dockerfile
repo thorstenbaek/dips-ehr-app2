@@ -9,7 +9,7 @@ RUN npm run build
 # production environment
 FROM nginx
 
-ENV CONFIG_URL=https://raw.githubusercontent.com/thorstenbaek/sandbox-environments/master/
+ENV CONFIG_URL=https://raw.githubusercontent.com/thorstenbaek/sandbox-environments/dev-tst/
 ENV IN_CONTAINER=1 
 
 COPY config/nginx/default.conf /etc/nginx/conf.d/default.conf

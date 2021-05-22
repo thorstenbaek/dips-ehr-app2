@@ -35,7 +35,7 @@
     }
 
     .about {
-        background: #e6e6e6;
+        background: var(--lighter-gray);
         padding: 5px 10px;        
         position: relative;
         height: calc(100% - 72px)
