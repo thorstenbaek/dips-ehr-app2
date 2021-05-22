@@ -54,10 +54,6 @@
             active.set(instance);
             instances.set([...$instances, instance]);
         }    
-    }
-
-    function sort(method) {
-        documents = documents.sort(method);
     }    
 
 </script>
