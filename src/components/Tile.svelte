@@ -32,7 +32,7 @@
         margin: 9px 18px;
         padding: 0 9px;
         width: 34px;
-        background: #1fa7b2;        
+        background: var(--blue);        
         border: none;
     }
 
@@ -42,7 +42,7 @@
 
     .tile button:hover {
         opacity: 1;
-        font-weight: bold;
+        color: var(--lighter-blue);
     }
 
     .tile.inactive button:hover {

@@ -46,7 +46,7 @@
         padding: 5px;
         margin: 0;
         overflow: hidden;        
-        background: #b6b6b6;
+        background: var(--gray);
     }
 
     .active {
@@ -55,7 +55,7 @@
 
 	.content {
         overflow: hidden;        
-        background: white;        
+        background: var(--lightest-gray); 
         height: 100%;
         widows: 100%;
     }
@@ -71,31 +71,40 @@
     }
 
     span {
-        background: #e6e6e6;        
+        background: var(--lighter-gray);
         display: block;
         cursor: pointer;
         padding: 2px 4px 5px 5px
     }
 
     span:hover {
-        background: #d6d6d6;
+        background: var(--lightest-gray);
     }
 
     li.active > span {
-        background: #b6b6b6;
+        color: var(--lightest-gray);
+        background: var(--gray);
     }
 
-    button:hover,
-    button:active {
-        color: #868686;
-    }
+    button:hover {
+        color: var(--gray);        
+    }    
 
     button {
+        color: var(--dark-gray);
         margin: 0px;
         padding: 0px;
         background: transparent;
         border: none;
         padding-left: 5px;
         font-weight: bold;
+    }
+
+    li.active > span > button {
+        color: var(--lightest-gray);
+    }
+
+    li.active > span > button:hover {
+        color: var(--lighter-gray);        
     }
 </style>

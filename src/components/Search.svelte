@@ -39,7 +39,7 @@
 
 <style>
     .search {    
-        background-color: #e6e6e6;        
+        background-color: var(--lighter-gray);        
     }
 
     .search-input {
@@ -47,11 +47,11 @@
     }
 
     .search-button {
-        background:#15576b;    
+        background:var(--dark-blue);    
         color: white;
     }
 
     .search-button:hover {
-        color: #1fa7b2;
+        color: var(--blue);
     }
 </style>

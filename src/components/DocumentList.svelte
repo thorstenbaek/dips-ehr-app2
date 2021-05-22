@@ -52,7 +52,7 @@
 <style>
     .document-list {
         overflow: auto;
-        background: hsl(0, 0%, 91%);    
+        background: var(--lighter-gray);    
         width: 100%;
         height: 100%;
     }    
