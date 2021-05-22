@@ -106,11 +106,11 @@ button:focus {
 	border-color: #666;
 }
 
-tr:nth-child(even) {
+tr:nth-child(odd) {
     background: var(--lightest-gray);    
 }
 
-tr:nth-child(odd) {
+tr:nth-child(even) {
     background: var(--lighter-gray);
 }
 
