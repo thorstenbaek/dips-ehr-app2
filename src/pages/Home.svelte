@@ -32,7 +32,7 @@
 </div>
 <style>
     .home {
-        background: linear-gradient(0deg, hsl(0, 0%, 10%) 0%,hsl(0, 0%, 20%) 20%, hsl(0, 0%, 30%) 100%);        
+        background: var(--dark-gray);
         padding: 0;        
         position: relative;
         min-height: calc(100% - 62px)
