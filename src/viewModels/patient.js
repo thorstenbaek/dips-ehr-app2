@@ -10,6 +10,7 @@ class Patient {
         this.givenName = resource.name[0].given.join(' ');
         this.birthDate = resource.birthDate;
         this.gender = resource.gender;
+        this.address = resource.address;
     }
 
     getSSN() {

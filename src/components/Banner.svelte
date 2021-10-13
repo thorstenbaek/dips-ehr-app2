@@ -13,7 +13,13 @@
 
 <div class="patient">
     <img alt="gender-symbol" src="./images/{$patient.gender}.svg"/>
-    <div class="patient-name">{$patient.fullName}</div>
+    <div class="patient-name">
+        {$patient.fullName}
+        {#each $patient.address as address}
+            <span class="patient-address">{address.line}, {address.city}, {address.state}</span>
+        {/each}
+    </div>
+    
     <ul class="patient-data">
         <li class="patient-data-ssn">{$patient.ssn}</li>
         <li class="patient-data-age">{$patient.age()} years</li>
@@ -25,7 +31,7 @@
 <style>
     .patient {
         display: grid;    
-        grid-template-columns: 40px auto 40px;
+        grid-template-columns: 40px auto auto 40px;
         grid-template-rows: 2.2rem 1.5rem;    
         background-color: var(--lighter-gray);    
         margin: 0;
@@ -55,7 +61,7 @@
         padding: 0;
         background: transparent;
         border: none;
-        grid-column: 3;
+        grid-column: 4;
         grid-row: 1 / span 2;
     }
     .patient-close-button:hover {
@@ -65,7 +71,6 @@
     .patient-close-button:focus {
         outline: none;
     }
-    
 
     .patient img {         
         margin: 12px 0;
@@ -76,10 +81,19 @@
 
     .patient-name {
         font-size: 1.6rem;   
+        font-weight: 500;
         color:var(--dark-blue);    
         grid-row: 1;
         grid-column: 2;
         margin: 2px 0 5px 0;
+    }
+    
+    .patient-address {
+        font-size: 1.2rem;   
+        font-weight: normal;
+        grid-row: 1;
+        grid-column: 3;
+        color:black;            
     }
 
     .patient-data {

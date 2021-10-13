@@ -23,12 +23,15 @@
       <thead></thead>
       <tbody>
         {#if patients}        
-            {#each patients as patient}
+            {#each patients as patient}            
             <tr class="result-item" on:click={selectPatient(patient)}>
                 <td class="result-item-ssn">{patient.ssn}</td>                
                 <td class="result-item-family-name">{patient.familyName}</td>
                 <td class="result-item-given-name">{patient.givenName}</td>
                 <td class="result-item-age">{patient.age()} y</td>
+                {#each patient.address as address}
+                    <td class="result-item-address">{address.line}, {address.city}, {address.state}</td>
+                {/each}
             </tr>                
             {/each}
         {/if}       
@@ -65,6 +68,10 @@
 }
 
 .result-item-age {
+    padding: 4px;
+}
+
+.result-item-address {
     padding: 4px;
 }
 </style>
