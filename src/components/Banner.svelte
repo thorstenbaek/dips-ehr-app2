@@ -15,7 +15,7 @@
     <img alt="gender-symbol" src="./images/{$patient.gender}.svg"/>
     <div class="patient-name">{$patient.fullName}</div>
     <ul class="patient-data">
-        <li class="patient-data-ssn">{$patient.ssn}</li>
+        <li class="patient-data-birthDate">{$patient.birthDate}</li>
         <li class="patient-data-age">{$patient.age()} years</li>
         <li class="patient-data-gender">{capitalize($patient.gender)}</li>
     </ul>
@@ -87,7 +87,7 @@
         grid-column: 2;
     }
 
-    .patient-data-ssn{    
+    .patient-data-birthDate{    
         list-style-type: none;
     }
 

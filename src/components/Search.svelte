@@ -6,13 +6,18 @@
 
     async function doSearch(query)
     {
-        var url = $settings.FhirServiceUri + "/Patient";
+        var url = $settings.FhirServiceUri + "/Patient";        
+        
         if (query != null)
         {
             url = url + "?family=" + query;
         }
 
-        var response = await fetch(url);
+        var response = await fetch(
+            url, 
+            {
+                headers: $settings.Headers
+            });
         var data = await response.json();
         dispatch("onSearch", data);
     }

@@ -33,7 +33,11 @@
         if ($settings)
         {
             const url = `${$settings.FhirServiceUri}/documentreference?patient=${$patient.id}`;
-            var response = await fetch(url);        
+            var response = await fetch(
+                url, 
+                {
+                    headers: $settings.Headers
+                });        
             var bundle = await response.json();    
             
             documents = bundle?.entry.map(d => d.resource)        
@@ -41,8 +45,16 @@
     })
 
     function openDocument(e) {    
-        const document = e.detail;
-        var apps = $documentApps.filter(a => a.mimetype == document.content[0].attachment.contentType.toLowerCase());
+        const document = e.detail;        
+        var content = document.content[0];
+        var apps = null;
+        if (!content.contentType)
+        {
+            apps = $documentApps.filter(a => a.mimetype == "application/pdf");
+        }
+        else {
+            apps = $documentApps.filter(a => a.mimetype == content.attachment.contentType.toLowerCase());
+        }
         if (apps.length > 0)
         {
             var instance = {

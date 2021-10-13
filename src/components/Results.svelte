@@ -25,7 +25,7 @@
         {#if patients}        
             {#each patients as patient}
             <tr class="result-item" on:click={selectPatient(patient)}>
-                <td class="result-item-ssn">{patient.ssn}</td>                
+                <td class="result-item-birthDate">{patient.birthDate}</td>                
                 <td class="result-item-family-name">{patient.familyName}</td>
                 <td class="result-item-given-name">{patient.givenName}</td>
                 <td class="result-item-age">{patient.age()} y</td>
@@ -50,7 +50,7 @@
     margin: 0px;    
 }
 
-.result-item-ssn {
+.result-item-birthDate {
     padding: 4px;
 }
 

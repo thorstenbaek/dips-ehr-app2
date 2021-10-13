@@ -83,6 +83,13 @@ export const settings = derived(
             set(data.settings);
         }
         
+        data.settings.FhirServiceUri = "https://localhost:44308";
+        // data.settings.FhirServiceUri = "https://vt-selecta-b.dips.local/DIPS-WebAPI/HL7/FHIR-R4";
+        data.settings.Headers = {
+            'TicketHeader': '6c113908-78b1-4739-baf5-f11e7a6b10af', 
+            'Auth-Ticket' : '6c113908-78b1-4739-baf5-f11e7a6b10af' 
+        }
+
     });
 
 export const documentApps = derived(
@@ -102,7 +109,11 @@ export const documentApps = derived(
                         component: DocumentApp,
                         app: app
                     })
-            }
+                if (app.mimetype == "application/pdf") {
+                    app.url = "http://localhost:8889"
+                }
+            }            
+            
             set(apps);
         }
     }
