@@ -9,7 +9,7 @@
 
     $: {
         if (results) {
-            patients = results.entry.map(p => new Patient(p.resource));
+            patients = results.entry.map(p => new Patient(p.resource)).sort((a, b) => {return (a.familyName < b.familyName) ? -1 : (a.familyName > b.familyName) ? 1 : 0 });
         }
     }
 
