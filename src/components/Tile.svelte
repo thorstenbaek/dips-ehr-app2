@@ -1,4 +1,6 @@
 <script>
+    import TileIcon from './TileIcon.svelte';
+    //import GrowthChartIcon from './GrowthChartIcon.svelte';
     export let app;
     export let active = false;
     export let onRun = null;
@@ -17,9 +19,14 @@
     }
 </script>
 
+
 <li class={classes.join(' ')} value={app}>
-    <button on:click={click(app)} title="{app.name}">{letter}</button>
+    <button on:click={click(app)} title="{app.name}">                
+        <TileIcon name={app.name}/>            
+    </button>
 </li>
+
+
 
 <style>
     .tile {        
@@ -27,13 +34,14 @@
     }
 
     .tile button {
+        opacity: 0.8;        
         font-size: 1.5em;
         color: white;
         margin: 9px 18px;
-        padding: 0 9px;
+        padding: 0 5px;
         width: 34px;
-        background: var(--blue);        
-        border: none;
+        border: none;        
+        background-color: transparent;
     }
 
     .tile.inactive button {
@@ -42,7 +50,6 @@
 
     .tile button:hover {
         opacity: 1;
-        color: var(--lighter-blue);
     }
 
     .tile.inactive button:hover {
