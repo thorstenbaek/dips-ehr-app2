@@ -5,7 +5,7 @@
 <div class="about select">
     <h2>DIPS EHR web application</h2>
     <p>
-        Version: v1.0.0.2
+        Version: v1.0.0.3
     </p>            
     <h2>Configuration</h2>    
     <p>
