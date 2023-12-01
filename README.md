@@ -13,5 +13,5 @@ helm template --name-template=release-name --set domain=mydomain.com . > manifes
 
 Install template with release-name and mydomain.com:
 ```
-helm install release-name --set domain=mydomain.com .
+helm install release-name --namespace=release-name --create-namespace --set domain=mydomain.com .  
 ```
